@@ -1,0 +1,30 @@
+<h1>Transportes - <small>Destinos</small></h1>
+<hr>
+<div class="btn-group" role="group" aria-label="Opciones de filtrado">
+  <button type="button" class="btn btn-secondary" (click)="filtro = ''">Todos</button>
+  <button type="button" class="btn btn-secondary" (click)="filtro = 'interno'">Interno</button>
+  <button type="button" class="btn btn-secondary" (click)="filtro = 'externo'">Externo</button>
+</div>
+
+<div class="col animated fadeIn fast" *ngFor="let transporte of trasporte | filtro: _servicesService.search"  >
+
+
+    <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img [src]="transporte.img" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">{{transporte.ciudadOrigen}}</h5>
+                    <p class="card-text">{{transporte.ciudadDestino}}</p>
+                    <p class="card-text"><small class="text-body-secondary">{{transporte.precio}}</small></p>
+                    <p class="card-text"><small class="text-body-secondary">{{transporte.descripcion}}</small></p>
+                    <p class="card-text"><small class="text-body-secondary">{{transporte.tipo}}</small></p>
+                    <button (click)="verTransporte(transporte)" type="button" class="text-body-secondary">Ver Mas</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

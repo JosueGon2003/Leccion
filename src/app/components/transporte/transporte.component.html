@@ -1,0 +1,32 @@
+<h1>{{transporte.nombre}} <small>{{transporte.aparicion}}</small></h1>
+<hr>
+<div class="row">
+    <div class="col-md-4">
+        <img src="" alt="">
+        <br><br>
+        <a href="transportes" class="btn btn-outline-danger btn-black">Regresar
+
+        </a>
+    </div>
+    <div class="col-md-8">
+        
+        <h3>Luegar de Origen: {{transporte.ciudadOrigen}}</h3>
+        <hr>
+        <h3>Lugar de Origen: {{transporte.ciudadDestino}}</h3>
+        <hr>
+        <p>
+            precio es de {{transporte.precio}}
+        </p>
+        <p>
+            {{transporte.descripcion}}
+        </p>
+        <p>
+            Tipo: {{transporte.tipo}}
+        </p>
+        <div>
+            <img [src]="transporte.img" class="img-fluid rounded-start" alt="...">
+            <br><br><br><br>            
+        </div>
+    </div>
+
+</div>
